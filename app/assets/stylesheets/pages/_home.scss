@@ -1,1 +1,29 @@
-// Specific CSS for your home-page
+.picture {
+  background-image: image-url('banner.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  text-align: right;
+}
+.topic {
+  margin-right: 24px;
+  padding-top: 24px;
+}
+
+.topic h1 {
+  color: white;
+  text-shadow: 2px 2px 3px rgb(0,0,0);
+  font-size: 28px;
+  font-weight: bold;
+}
+.topic h3 {
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+  font-size: 28px;
+}
+.home-welcome-text{
+  margin-top: 24px;
+}
+.welcome-text {
+  width: 500px;
+}
