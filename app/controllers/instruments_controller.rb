@@ -14,13 +14,14 @@ class InstrumentsController < ApplicationController
   # creating new instance of instrument for instrument creation form
   def new
     @instrument = Instrument.new
+    @category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"]
   end
 
   # now actually creating the new instrument with user params and saving it
   # rendering new page if user did not input all params
   def create
     @instrument = Instrument.new(instrument_params)
-
+    @instrument.user = current_user
     if @instrument.save
       redirect_to instrument_path(@instrument), notice: 'Created new instrument.'
     else
