@@ -6,7 +6,23 @@
 
     </div>
     <div class="booking-form">
-      <p>Placeholder for booking form</p>
+      <div class="col-xs-12 col-sm-6">
+      <div class="text-center">
+        <%= simple_form_for [@instrument, @booking] do |f| %>
+          <div class="booking-card">
+            <div >
+            <p>From </p>
+            <%= f.text_field :start_date, class: "datepicker checkin_on", value: @start_date, placeholder: "dd/mm/yyyy" %>
+            </div>
+            <div>
+            <p> To </p>
+            <%= f.text_field :end_date, class: "datepicker checkout_on", value: @end_date, placeholder: "dd/mm/yyyy" %>
+            </div>
+            <p> <strong>Total price: <span id="total_price">15 🍺</span></strong></p>
+            <%= f.submit "Book", class: "btn btn-danger"%>
+          </div>
+        <% end%>
+      </div>
     </div>
   </div>
   <div class="instrument-details">
