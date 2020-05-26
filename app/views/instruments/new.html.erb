@@ -1,0 +1,11 @@
+<h1>Add a new Instrument</h1>
+
+<%= simple_form_for @instrument do |f| %>
+<%= f.input :name %>
+<%= f.input :category, collection: @category %>
+<%= f.input :description %>
+<%= f.input :photo, as: :file %>
+<%= f.submit "Add Instrument" %>
+<% end %>
+<br>
+<%= link_to 'Back to Homepage', root_path  %>
