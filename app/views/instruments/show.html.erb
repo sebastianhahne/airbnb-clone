@@ -1,8 +1,22 @@
-<h1>Instruments#show</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+
+<div class="container">
+  <div class="row d-flex justify-content-between">
+    <div class="instrument-picture">
+    <h1><%= @instrument.name %></h1>
+
+    </div>
+    <div class="booking-form">
+      <p>Placeholder for booking form</p>
+    </div>
+  </div>
+  <div class="instrument-details">
+    <p><strong>Descrition:</strong></p>
+    <p><%= @instrument.description %></p>
+    <%= link_to "Back to search results", instruments_path %>
+  </div>
 
 
-<!--  display image from cloudinary -->
-<%#= cl_image_tag @instrument.photo.key, width:200, height: 200, crop: :fill%>
+</div>
 
 
+<!-- g0u0mczfrpnw6ud3nszk -->
