@@ -62,6 +62,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added after initial install
+gem 'cloudinary', '~> 1.12.0'
 
 # secure login features
 gem 'devise'
+gem 'faker'
+
