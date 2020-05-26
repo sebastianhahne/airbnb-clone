@@ -3,7 +3,8 @@ class Instrument < ApplicationRecord
 
   validates :name, presence: true
   # change category names later
-  validates :category, presence: true, acceptance: { accept: ["chinese", "italian", "japanese", "french", "belgian"] }
+  validates :category, presence: true, acceptance: { accept: ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"] }
   validates :description, presence: true
   has_one_attached :photo
 end
+

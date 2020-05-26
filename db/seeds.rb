@@ -17,8 +17,9 @@ puts 'Cloning users'
 
   10.times do
     name = Faker::Music.instrument
-    category = ["chinese", "italian", "japanese", "french", "belgian"].sample
+    category = ["guitar", "base", "drums", "key instrument", "string", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
+    photo = "g0u0mczfrpnw6ud3nszk"
 
     Instrument.create!(name: name, category: category, description: description, user: user)
     puts "Instrument #{name} create!d"
@@ -33,7 +34,7 @@ email = 'sebastian.hahne@jamable.com'
 
   10.times do
     name = Faker::Music.instrument
-    category = ["chinese", "italian", "japanese", "french", "belgian"].sample
+    category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
 
     Instrument.create!(name: name, category: category, description: description, user: user)
@@ -49,7 +50,7 @@ email = 'moritz.kork@jamable.com'
 
   10.times do
     name = Faker::Music.instrument
-    category = ["chinese", "italian", "japanese", "french", "belgian"].sample
+    category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
 
     Instrument.create!(name: name, category: category, description: description, user: user)
@@ -65,8 +66,8 @@ email = 'benj.riethmuller@jamable.com'
 
   10.times do
     name = Faker::Music.instrument
-    category = ["chinese", "italian", "japanese", "french", "belgian"].sample
-    description = Faker::TvShows::Simpsons.quote
+    category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
+    description = Faker::TvShows::Simpsons.quot
 
     Instrument.create!(name: name, category: category, description: description, user: user)
     puts "Instrument #{name} create!d"
@@ -81,7 +82,7 @@ email = 'toni.panacek@jamable.com'
 
   10.times do
     name = Faker::Music.instrument
-    category = ["chinese", "italian", "japanese", "french", "belgian"].sample
+    category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
 
     Instrument.create!(name: name, category: category, description: description, user: user)
