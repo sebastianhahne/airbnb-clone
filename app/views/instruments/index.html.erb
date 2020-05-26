@@ -1,0 +1,15 @@
+<% @instruments.each do |instrument| %>
+  <div class="card-trip">
+    <img src="" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= instrument.name %></h2>
+        <p><%= instrument.category %></p>
+        <p><%= instrument.description %></p>
+      </div>
+      <h2 class="card-trip-pricing">5 🍺</h2>
+      <img src="" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+<% end %>
+
