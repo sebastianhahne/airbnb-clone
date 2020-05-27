@@ -6,7 +6,7 @@
 
     <% @instruments.each do |instrument| %>
 
-      <div class="card-trip">
+      <div class="card-trip col-md-auto">
         <% if instrument.photo.attached? %>
           <%= link_to (cl_image_tag instrument.photo.key, height: 320, width: 320, crop: :fill, class: 'instrument-image'), instrument_path(instrument) %>
         <% else %>
