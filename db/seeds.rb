@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # destroying old database
 puts 'Burning down old database...'
 puts 'Killing all the users...'
@@ -13,32 +15,35 @@ puts 'Cloning users'
   username = 'sebi'
 
   user = User.create!(email: email, password: pw, password_confirmation: pw, username: username)
-  puts "User #{username} create!d"
+  puts "User #{username} created"
 
-  10.times do
+  2.times do
     name = Faker::Music.instrument
     category = ["guitar", "base", "drums", "key instrument", "string", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
-    photo = "g0u0mczfrpnw6ud3nszk"
 
-    Instrument.create!(name: name, category: category, description: description, user: user)
-    puts "Instrument #{name} create!d"
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    file = URI.open('app/assets/images/guitar_dummy.jpg')
+    new_instrument.photo.attach(io: file, filename: 'guitar_dummy.jpg', content_type: 'image/jpg')
+    puts "Instrument #{name} created"
   end
 
-email = 'sebastian.hahne@jamable.com'
+  email = 'sebastian.hahne@jamable.com'
   pw = 'hahne1234'
   username = 'basti'
 
   user = User.create!(email: email, password: pw, password_confirmation: pw, username: username)
-  puts "User #{username} create!d"
+  puts "User #{username} created"
 
-  10.times do
+  2.times do
     name = Faker::Music.instrument
     category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
 
-    Instrument.create!(name: name, category: category, description: description, user: user)
-    puts "Instrument #{name} create!d"
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    file = URI.open('app/assets/images/guitar_dummy.jpg')
+    new_instrument.photo.attach(io: file, filename: 'guitar_dummy.jpg', content_type: 'image/jpg')
+    puts "Instrument #{name} created"
   end
 
 email = 'moritz.kork@jamable.com'
@@ -48,13 +53,15 @@ email = 'moritz.kork@jamable.com'
   user = User.create!(email: email, password: pw, password_confirmation: pw, username: username)
   puts "User #{username} create!d"
 
-  10.times do
+  2.times do
     name = Faker::Music.instrument
     category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
 
-    Instrument.create!(name: name, category: category, description: description, user: user)
-    puts "Instrument #{name} create!d"
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    file = URI.open('app/assets/images/guitar_dummy.jpg')
+    new_instrument.photo.attach(io: file, filename: 'guitar_dummy.jpg', content_type: 'image/jpg')
+    puts "Instrument #{name} created"
   end
 
 email = 'benj.riethmuller@jamable.com'
@@ -62,15 +69,17 @@ email = 'benj.riethmuller@jamable.com'
   username = 'benj'
 
   user = User.create!(email: email, password: pw, password_confirmation: pw, username: username)
-  puts "User #{username} create!d"
+  puts "User #{username} created"
 
-  10.times do
+  2.times do
     name = Faker::Music.instrument
     category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
-    description = Faker::TvShows::Simpsons.quot
+    description = Faker::TvShows::Simpsons.quote
 
-    Instrument.create!(name: name, category: category, description: description, user: user)
-    puts "Instrument #{name} create!d"
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    file = URI.open('app/assets/images/guitar_dummy.jpg')
+    new_instrument.photo.attach(io: file, filename: 'guitar_dummy.jpg', content_type: 'image/jpg')
+    puts "Instrument #{name} created"
   end
 
 email = 'toni.panacek@jamable.com'
@@ -78,15 +87,17 @@ email = 'toni.panacek@jamable.com'
   username = 'toni'
 
   user = User.create!(email: email, password: pw, password_confirmation: pw, username: username)
-  puts "User #{username} create!d"
+  puts "User #{username} created"
 
-  10.times do
+  2.times do
     name = Faker::Music.instrument
     category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
     description = Faker::TvShows::Simpsons.quote
 
-    Instrument.create!(name: name, category: category, description: description, user: user)
-    puts "Instrument #{name} create!d"
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    file = URI.open('app/assets/images/guitar_dummy.jpg')
+    new_instrument.photo.attach(io: file, filename: 'guitar_dummy.jpg', content_type: 'image/jpg')
+    puts "Instrument #{name} created"
   end
 
 
