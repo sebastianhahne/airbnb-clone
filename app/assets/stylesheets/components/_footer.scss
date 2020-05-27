@@ -1,8 +1,9 @@
-.footer,
+.wrapper {
+  min-height: calc(100vh - 150px)
+}
 .push {
   height: 150px;
 }
-
 .footer {
   background: rgba(52,28,28,0.5);
   display: flex;
