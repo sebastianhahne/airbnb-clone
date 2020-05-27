@@ -7,12 +7,18 @@
     <% @instruments.each do |instrument| %>
 
       <div class="card-trip">
-        <%= cl_image_tag instrument.photo.key, height: 400, width: 400, crop: :fill %>
+        <% if instrument.photo.attached? %>
+          <%= link_to (cl_image_tag instrument.photo.key, height: 320, width: 320, crop: :fill, class: 'instrument-image'), instrument_path(instrument) %>
+        <% else %>
+          <%= link_to instrument_path(instrument) do %>
+            <%= image_tag '/app/assets/images/guitar_dummy.jpg', class: 'instrument-image' %>
+          <% end %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= instrument.name %></h2><%= link_to "Details", instrument %>
             <p><%= instrument.category %></p>
-            <p><%= instrument.description %></p>
+
           </div>
           <h2 class="card-trip-pricing">5 🍺</h2>
           <img src="" class="card-trip-user avatar-bordered" />

@@ -9,14 +9,6 @@ class InstrumentsController < ApplicationController
   def show
     @instrument = Instrument.find(params[:id])
     @booking = Booking.new
-    if ((!@checkin.blank?) && (!@checkout.blank?))
-      from = @checkin.split("/")
-      to = @checkout.split("/")
-      start = Date.new(from[2].to_f, from[1].to_f - 1, from[0].to_f)
-      finish = Date.new(to[2].to_f, to[1].to_f - 1, to[0].to_f)
-      @nb_days = (finish - start).to_f
-      @total_price = (@nb_days * 5.to_f).round
-    end
   end
 
   # creating new instance of instrument for instrument creation form
