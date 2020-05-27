@@ -1,19 +1,26 @@
 .card-trip {
-  // overflow: hidden;
-  // background: white;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-  // height: 250px;
-  width: 300px;
-  height: 350px;
+  width: 320px;
+  height: 410px;
   border-radius: 16px;
   margin: 20px;
+  padding: 0px;
 }
 
-.card-trip > img {
-  height: 250px;
-  width: 100%;
-  object-fit: cover;
+.instrument-image {
+  border-radius: 16px 16px 0px 0px;
 }
+
+// .row {
+//   margin-right: 0;
+//   margin-left: 0;
+// }
+
+// // .card-trip > img {
+// //   height: 250px;
+// //   width: 100%;
+// //   // object-fit: cover;
+// // }
 
 .card-trip h2 {
   font-size: 16px;
@@ -32,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  // position: relative;
   background-color: white;
 }
 
@@ -43,6 +50,6 @@
   width: 40px;
 }
 
-.card-trip-infos {
-  height: 80px;
-}
+// .card-trip-infos {
+//   height: 80px;
+// }
