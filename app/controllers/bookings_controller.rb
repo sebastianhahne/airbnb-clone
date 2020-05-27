@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     else
       @total_price = 0
     end
+
     # maybe stay on the page and disable the booking button and get a notifaction
     #or redirect to dashboard
     if @booking.save
