@@ -1,12 +1,12 @@
 .instrument-picture {
-  background-image: image-url('no_user_image.png');
+  // background-image: image-url('no_user_image.png');
+  // background-image: url('cl_image_path @instrument.photo.key');
   background-size: cover;
   width: 350px;
-  margin: 10px 10px;
-  padding: 10px 10px;
+  margin: 0px 0px;
+  padding: 5px 0px;
   border-radius: 2px;
 }
-
 
 .booking-form {
   background-color: white;
