@@ -67,7 +67,7 @@ email = 'benj.riethmuller@jamable.com'
   10.times do
     name = Faker::Music.instrument
     category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"].sample
-    description = Faker::TvShows::Simpsons.quot
+    description = Faker::TvShows::Simpsons.quote
 
     Instrument.create!(name: name, category: category, description: description, user: user)
     puts "Instrument #{name} create!d"
