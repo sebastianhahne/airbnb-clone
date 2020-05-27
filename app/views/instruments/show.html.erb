@@ -10,16 +10,18 @@
       <div class="text-center">
         <%= simple_form_for [@instrument, @booking] do |f| %>
           <div class="booking-card">
-            <div >
-            <p>From </p>
+            <div class="text-left">
+            <p><strong>From: </strong></p>
             <%= f.text_field :start_date, data: { behavior: "flatpickr" }, value: @start_date, placeholder: "dd/mm/yyyy" %>
             </div>
-            <div>
-            <p> To </p>
-            <%= f.text_field :end_date, data: { behavior: "flatpickr" }, value: @end_date, placeholder: "dd/mm/yyyy" %>
+            <div class="text-left to">
+              <p><strong>To: </strong></p>
+              <%= f.text_field :end_date, data: { behavior: "flatpickr" }, value: @end_date, placeholder: "dd/mm/yyyy" %>
             </div>
-            <p> <strong>Total price: <span id="total_price"></span></strong></p>
-            <%= f.submit "Book", class: "btn btn-danger"%>
+            <div class="text-left total">
+              <p><strong>Total beers: <span id="total_price"></span></strong></p>
+              <%= f.submit "Book", class: "btn btn-danger"%>
+            </div>
           </div>
         <% end%>
       </div>

@@ -2,6 +2,7 @@
   background-image: image-url('no_user_image.png');
   background-size: cover;
   width: 350px;
+  height: 350px;
   margin: 10px 10px;
   padding: 10px 10px;
   border-radius: 2px;
@@ -11,6 +12,7 @@
 .booking-form {
   background-color: white;
   width: 350px;
+  height: 350px;
   margin: 10px 10px;
   padding: 10px 10px;
 }
@@ -19,4 +21,15 @@
 .instrument-details {
   background-color: white;
   width: 100%;
+  height: 200px;
+  margin: 10px 10px;
+  padding: 10px 10px;
+}
+
+.total {
+  margin-top: 15px;
+}
+
+.to {
+  margin-top: 15px;
 }
