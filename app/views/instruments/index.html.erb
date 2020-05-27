@@ -1,17 +1,28 @@
-<h1>Found <%= @instruments.count %> Instruments</h1>
+<div class="container">
 
-<% @instruments.each do |instrument| %>
-  <div class="card-trip">
-    <img src="" />
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= instrument.name %></h2><%= link_to "show", instrument %>
-        <p><%= instrument.category %></p>
-        <p><%= instrument.description %></p>
+  <h1>Found <%= @instruments.count %> Instruments</h1>
+
+  <div class="row d-flex justify-content-start">
+
+    <% @instruments.each do |instrument| %>
+
+      <div class="card-trip">
+        <img src="" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= instrument.name %></h2><%= link_to "Details", instrument %>
+            <p><%= instrument.category %></p>
+            <p><%= instrument.description %></p>
+          </div>
+          <h2 class="card-trip-pricing">5 🍺</h2>
+          <img src="" class="card-trip-user avatar-bordered" />
+        </div>
       </div>
-      <h2 class="card-trip-pricing">5 🍺</h2>
-      <img src="" class="card-trip-user avatar-bordered" />
-    </div>
+
+    <% end %>
+
   </div>
-<% end %>
+
+</div>
+
 
