@@ -1,0 +1,17 @@
+<h1>Welcome <%= current_user.username %>. This is your Dashboard</h1>
+<div class="wrapper-dashboard">
+  <ul class="list-unstyled">
+    <% @bookings.each do |booking| %>
+        <li class="dashboard">
+          <div class='product-body'>
+            <h2><%= booking.instrument.name %></h2>
+            <%= link_to "Delete Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete"} %>
+            <p>From: <strong><%= booking.start_date %></strong></p>
+            <p>To: <strong><%= booking.end_date %></strong></p>
+            <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+          </div>
+        </li>
+    <hr>
+    <% end %>
+  </ul>
+</div>
