@@ -67,4 +67,3 @@ gem 'cloudinary', '~> 1.12.0'
 # secure login features
 gem 'devise'
 gem 'faker'
-gem 'bootstrap-datepicker-rails'

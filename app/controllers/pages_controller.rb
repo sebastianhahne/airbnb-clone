@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   # check what we need to include for device to work
   def dashboard
     @instruments = Instrument.where(user_id: params[current_user])
-    @bookings = Booking.where(user_id: params[current_user])
+    @bookings = Booking.where(user_id: current_user.id)
+
   end
 end

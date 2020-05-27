@@ -14,10 +14,16 @@
 <body>
   <%= render 'shared/navbar' %>
 
+  <div class="wrapper">
+
   <%= yield %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= javascript_pack_tag 'application' %>
+
+</div>
+<div class="push"></div>
+  <%= render 'shared/footer' %>
 </body>
 </html>
