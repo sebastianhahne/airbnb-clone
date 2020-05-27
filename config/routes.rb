@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :instruments do
     resources :bookings, only: [:create]
   end
-
+  resources :bookings, only: [:destroy]
 end
