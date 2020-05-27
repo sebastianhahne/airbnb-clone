@@ -7,7 +7,7 @@
     <% @instruments.each do |instrument| %>
 
       <div class="card-trip">
-        <img src="" />
+        <%= cl_image_tag instrument.photo.key, height: 400, width: 400, crop: :fill %>
         <div class="card-trip-infos">
           <div>
             <h2><%= instrument.name %></h2><%= link_to "Details", instrument %>
