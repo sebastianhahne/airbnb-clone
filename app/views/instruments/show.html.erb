@@ -1,10 +1,10 @@
 
 <div class="container">
   <div class="row d-flex justify-content-between">
-    <div class="instrument-picture">
+  <div class="instrument-picture">
+    <%= cl_image_tag @instrument.photo.key, height: 320, width: 320, crop: :fill, class: 'instrument-picture' %>
     <h1><%= @instrument.name %></h1>
-
-    </div>
+  </div>
     <div class="booking-form">
       <div class="col-xs-12 col-sm-6">
       <div class="text-center">
