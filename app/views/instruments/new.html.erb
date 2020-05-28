@@ -1,11 +1,29 @@
-<h1>Add a new Instrument</h1>
+<div class="container">
+  <div class="instrument-form">
+    <h1>Add a new Instrument</h1>
+    <br>
+    <%= simple_form_for @instrument do |f| %>
+    <%= f.input :name, placeholder: "Fender Stratocaster" %>
+    <%= f.input :category, collection: @category %>
+    <%= f.input :description, placeholder: "The one Jimi Hendrix played.." %>
+    <label class="btn btn-ghost">Upload a picture!
+      <span style="display:none;">
+        <%= f.input :photo, as: :file, class: 'hidden' %>
+      </span>
+    </label>
+    <label class="btn btn-solid">Add Instrument!
+      <span style="display:none;">
+        <%= f.submit "Add Instrument" %>
+      </span>
+    </label>
+    <% end %>
+    <br>
 
-<%= simple_form_for @instrument do |f| %>
-<%= f.input :name %>
-<%= f.input :category, collection: @category %>
-<%= f.input :description %>
-<%= f.input :photo, as: :file %>
-<%= f.submit "Add Instrument" %>
-<% end %>
-<br>
-<%= link_to 'Back to Homepage', root_path  %>
+    <label class="link-to">Back to Homepage
+      <span style="display:none;">
+      <%= link_to 'Back to Homepage', root_path  %>
+      </span>
+    </label>
+
+  </div>
+</div>
