@@ -6,13 +6,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.instrument = @instrument
     @booking.user = current_user
+    @booking.status = "Pending validation"
     # code for calculating the total price depeding on the rental duration
     if @booking.end_date && @booking.start_date
       @total_price = (@booking.end_date - @booking.start_date).to_f * 5
     else
       @total_price = 0
     end
-
     # maybe stay on the page and disable the booking button and get a notifaction
     #or redirect to dashboard
     if @booking.save
@@ -22,8 +22,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  # def index
+  #    @bookings = Booking.where(user_id: current_user.id)
+  # end
+
+  def update
+    set_booking
+    @booking.status = "Pending validation"
+    @booking.save!
+  end
+
   def destroy
-    @booking = Booking.find(params[:id])
+    set_booking
     @booking.destroy
     redirect_to dashboard_path
   end
@@ -32,6 +42,11 @@ class BookingsController < ApplicationController
 
   # whitelisting instrument params for input
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price)
+    params.require(:booking).permit(:start_date, :end_date, :total_price, :status)
   end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
 end
