@@ -3,7 +3,7 @@ class Instrument < ApplicationRecord
 
   validates :name, presence: true
   # change category names later
-  validates :category, presence: true, acceptance: { accept: ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"] }
+  validates :category, presence: true, acceptance: { accept: ["bowed strings", "wood wind", "brass", "percussions", "keyboard" , "guitar family"] }
   validates :description, presence: true
   has_one_attached :photo
 
