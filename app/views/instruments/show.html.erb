@@ -12,11 +12,11 @@
           <div class="booking-card">
             <div class="text-left">
             <p><strong>From: </strong></p>
-            <%= f.text_field :start_date, data: { behavior: "flatpickr" }, value: @start_date, placeholder: "dd/mm/yyyy" %>
+            <%= f.text_field :start_date, class: "start_date", data: { behavior: "flatpickr" }, value: @start_date, placeholder: "dd/mm/yyyy" %>
             </div>
             <div class="text-left to">
               <p><strong>To: </strong></p>
-              <%= f.text_field :end_date, data: { behavior: "flatpickr" }, value: @end_date, placeholder: "dd/mm/yyyy" %>
+              <%= f.text_field :end_date, class: "end_date", data: { behavior: "flatpickr" }, value: @end_date, placeholder: "dd/mm/yyyy" %>
             </div>
             <div class="text-left total">
               <p><strong>Total beers: <span id="total_price"></span></strong></p>
@@ -33,5 +33,21 @@
     <%= link_to "Back to search results", instruments_path %>
   </div>
 
-
 </div>
+<script>
+  const myInput = document.querySelector("#new_booking");
+  myInput.addEventListener("change", (event) => {
+    const currentTarget = event.currentTarget;
+    const start = document.querySelector("#booking_start_date");
+    const end = document.querySelector("#booking_end_date");
+    const oneDay = 24 * 60 * 60 * 1000;
+    const firstDate = new Date(start.value);
+    const secondDate = new Date(end.value);
+    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    if (diffDays>0) {
+    document.querySelector("#total_price").innerHTML = (diffDays*5) +" 🍺";
+    };
+
+  });
+
+</script>
