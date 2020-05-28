@@ -12,7 +12,8 @@
 <h2>Instruments of the week:</h2>
   <div class="row d-flex justify-content-start">
 
-    <% 3.times do instrument = @instruments.sample %>
+    <% instrument_shuffle = @instruments.shuffle[0..2] %>
+    <% instrument_shuffle.each do |instrument| %>
 
       <div class="card-trip col-md-auto">
         <% if instrument.photo.attached? %>
