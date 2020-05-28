@@ -1,8 +1,11 @@
 .searchbar {
-  width: 500px;
+  width: 100%;
   margin-top: 24px;
 }
-
+.input-field {
+  width: 350px;
+  margin-right: 4px;
+}
 .search-form-control {
   position: relative;
 }
