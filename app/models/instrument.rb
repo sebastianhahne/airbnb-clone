@@ -6,5 +6,12 @@ class Instrument < ApplicationRecord
   validates :category, presence: true, acceptance: { accept: ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"] }
   validates :description, presence: true
   has_one_attached :photo
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_category,
+    against: [ :name, :category ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
 

@@ -67,3 +67,6 @@ gem 'cloudinary', '~> 1.12.0'
 # secure login features
 gem 'devise'
 gem 'faker'
+
+#strong search functionality
+gem 'pg_search', '~> 2.3.0'

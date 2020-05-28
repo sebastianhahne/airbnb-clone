@@ -2,7 +2,14 @@ class InstrumentsController < ApplicationController
 
   # Creating an instance of all instruments
   def index
-    @instruments = Instrument.all
+    if params[:query].present?
+      # sql_query = "name ILIKE :query OR category ILIKE :query"
+      # @instruments = Instrument.where(sql_query, query: "%#{params[:query]}%")
+      @instruments = Instrument.search_by_name_and_category(params[:query])
+    else
+      # @instruments = Instrument.all
+      @instruments = Instrument.all
+    end
   end
 
   # finding instrument user clicked on and creating inctance of booking for form
