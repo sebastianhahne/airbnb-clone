@@ -27,7 +27,7 @@
                   <div class="col-md-auto right-part">
                     <p><strong>From:</strong><%= booking.start_date %></p>
                     <p><strong>To:</strong><%= booking.end_date %></p>
-                    <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+                    <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
                     <p>Waiting for confirmation</p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
                   <div class="col-md-auto right-part">
                     <p><strong>From:</strong><%= booking.start_date %></p>
                     <p><strong>To:</strong><%= booking.end_date %></p>
-                    <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+                    <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
                     <p><strong>Your booking is confirmed !</strong></p>
                   </div>
                 </div>
@@ -72,7 +72,7 @@
                   <div class="col-md-auto right-part">
                     <p><strong>From:</strong><%= booking.start_date %></p>
                     <p><strong>To:</strong><%= booking.end_date %></p>
-                    <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+                    <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
                     <p><%= booking.instrument.user.username %> canceled your booking</p>
                   </div>
                 </div>
@@ -101,7 +101,7 @@
                   <% end %>
                   <div class="card-product-infos row d-flex justify-content-between">
                     <div class="col-md-auto">
-                      <h2><%= booking.user.username %> wants to rent your instrument</h2>
+                      <h2><%= booking.user.username %> wants to rent your <%= booking.instrument.name %></h2>
                         <div class="accept-buttons row d-flex justify-content-between">
                           <div class="accept col-md-auto">
                             <label class="btn btn-solid">Accept
@@ -120,7 +120,7 @@
                     <div class="col-md-auto right-part">
                       <p><strong>From:</strong><%= booking.start_date %></p>
                       <p><strong>To:</strong><%= booking.end_date %></p>
-                      <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+                      <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
                     </div>
                   </div>
                 </div>
@@ -129,12 +129,12 @@
               <p>✔ Confirmed <%= booking.user.username %> to rent your instrument</p>
               <p><strong>From:</strong><%= booking.start_date %></p>
               <p><strong>To:</strong><%= booking.end_date %></p>
-              <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+              <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
             <% elsif booking.status == "Canceled" %>
               <p>❌ You canceled booking of <%= booking.user.username %></p>
               <p><strong>From:</strong><%= booking.start_date %></p>
               <p><strong>To:</strong><%= booking.end_date %></p>
-              <p><strong>Total price: </strong><%= @total_price %> 🍺</p>
+              <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
             <% end %>
           <% end %>
         <% end %>
