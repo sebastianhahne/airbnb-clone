@@ -14,7 +14,7 @@ class InstrumentsController < ApplicationController
   # creating new instance of instrument for instrument creation form
   def new
     @instrument = Instrument.new
-    @category = ["guitar", "base", "drums", "key instrument", "string", "wind instrument", "PA", "DJ", "light"]
+    @category = ["bowed strings", "wood wind", "brass", "percussions", "keyboard" , "guitar family"]
   end
 
   # now actually creating the new instrument with user params and saving it
