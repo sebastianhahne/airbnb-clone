@@ -1,6 +1,8 @@
 <div class="container">
 
-  <h1><%= @instrument.name.titleize %></h1>
+  <div class="name-div">
+    <h1><%= @instrument.name.titleize %></h1>
+  </div>
 
   <div class="d-flex show-card">
 
@@ -13,27 +15,24 @@
       <div class="instrument-details">
         <h4>Description:</h4>
         <p><%= @instrument.description %></p>
-
-          <%= link_to "Back to search results", instruments_path %>
-
       </div>
 
 
       <div class="container">
 
           <div class="row">
+            <h4>Select dates:</h4>
             <div class="booking-form">
             <%= simple_form_for [@instrument, @booking] do |f| %>
-
-              From:
-              <%= f.text_field :start_date, class: "start_date", data: { behavior: "flatpickr" }, value: @start_date, placeholder: "dd/mm/yyyy" %>
-              To:
-              <%= f.text_field :end_date, class: "end_date", data: { behavior: "flatpickr" }, value: @end_date, placeholder: "dd/mm/yyyy" %>
-
-
+              From: <%= f.text_field :start_date, class: "start_date", data: { behavior: "flatpickr" }, value: @start_date, placeholder: "dd/mm/yyyy" %>
+              To: <%= f.text_field :end_date, class: "end_date", data: { behavior: "flatpickr" }, value: @end_date, placeholder: "dd/mm/yyyy" %>
+        <br>
+        <br>
         <h4>Total beers: <span id="total_price"></span></h4>
         <%= f.submit "Book Now", class: "btn-solid"%>
         <% end%>
+        <br>
+          <%= link_to "Back to search results", instruments_path %>
         </div>
         </div>
 
