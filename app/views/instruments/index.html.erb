@@ -16,8 +16,8 @@
         <% end %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= instrument.name %></h2><%= link_to "Details", instrument %>
-            <p><%= instrument.category %></p>
+            <h2><%= instrument.name.titleize %></h2><%= link_to "Details", instrument %>
+            <p><%= instrument.category.titleize %></p>
 
           </div>
           <h2 class="card-trip-pricing">5 🍺</h2>
