@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   # User wants to see all his instruments and bookings
   # check what we need to include for device to work
   def dashboard
-    @instruments = Instrument.where(user_id: params[current_user])
+    @instruments = Instrument.where(user_id: current_user.id)
     @bookings = Booking.where(user_id: current_user.id)
 
   end

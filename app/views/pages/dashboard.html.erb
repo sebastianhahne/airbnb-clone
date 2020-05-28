@@ -65,7 +65,7 @@
 <!-- List of the instruments you are sharing (shown on the right side) -->
 
     <div class="m-5">
-      <p>Your instruments:</p>
+      <p>Booking of your instruments:</p>
         <ul class="list-unstyled">
           <% @instruments.each do |instrument| %>
             <% instrument.bookings.each do |booking| %>
@@ -79,6 +79,15 @@
                     <li><%= link_to "Decline", booking_path(booking, booking: {status: "Canceled"}), method: :patch%></li>
                   </div>
                 </li>
+
+              <% elsif booking.status == "Confirmed" %>
+                <p>✔ Confirmed <%= booking.user.username %> to rent your instrument</p>
+                <p> Dates : <%= booking.start_date %> and <%= booking.end_date %> </p>
+
+              <% elsif booking.status == "Confirmed" %>
+                <p>❌ You canceled booking of <%= booking.user.username %></p>
+                <p> Dates : <%= booking.start_date %> and <%= booking.end_date %> </p>
+
               <% end %>
 
             <% end %>
