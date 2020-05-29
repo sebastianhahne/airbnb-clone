@@ -16,3 +16,4 @@ end
 #     resources :bookings, only: [:create]
 #   end
 #   resources :bookings, only: [:index, :show, :destroy, :update]
+# patch '/instruments/:instrument_id/bookings/:id', to: 'bookings#update', as: :update_booking

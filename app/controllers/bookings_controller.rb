@@ -7,12 +7,6 @@ class BookingsController < ApplicationController
     @booking.instrument = @instrument
     @booking.user = current_user
     @booking.status = "Pending validation"
-    # code for calculating the total price depeding on the rental duration
-    if @booking.end_date && @booking.start_date
-      @total_price = (@booking.end_date - @booking.start_date).to_f * 5
-    else
-      @total_price = 0
-    end
     # maybe stay on the page and disable the booking button and get a notifaction
     #or redirect to dashboard
     if @booking.save
@@ -29,6 +23,7 @@ class BookingsController < ApplicationController
   def update
     set_booking
     @booking.update(booking_params)
+    @booking.save
     redirect_to dashboard_path
   end
 
