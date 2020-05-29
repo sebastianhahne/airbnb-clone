@@ -106,13 +106,13 @@
                           <div class="accept col-md-auto">
                             <label class="btn btn-solid">Accept
                             <span style="display:none;">
-                              <%= link_to "Accept ", booking_path(booking, booking: {status: "Confirmed"}), method: :patch%>
+                              <%= link_to "Accept ", update_booking_path(booking, booking: {status: "Confirmed"}), method: :patch %>
                             </span></label>
                           </div>
                           <div class="decline col-md-auto">
                             <label class="btn btn-ghost">Decline
                             <span style="display:none;">
-                              <%= link_to "Decline", booking_path(booking, booking: {status: "Canceled"}), method: :patch%>
+                              <%= link_to "Decline", update_booking_path(booking, booking: {status: "Canceled"}), method: :patch %>
                             </span></label>
                           </div>
                         </div>
