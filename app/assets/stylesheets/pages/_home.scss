@@ -12,7 +12,7 @@ html, body {
 }
 .topic {
   margin-right: 24px;
-  padding-top: 72px;
+  padding-top: 120px;
 }
 
 .topic h1 {
@@ -31,4 +31,10 @@ html, body {
 }
 .welcome-text {
   width: 500px;
+}
+
+.container h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: lighter;
 }
