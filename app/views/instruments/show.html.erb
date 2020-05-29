@@ -8,11 +8,12 @@
 
     <div class="instrument-picture col-lg-6">
       <%= cl_image_tag @instrument.photo.key, height: 600, width: 600, crop: :fill, class: 'instrument-picture' %>
+      <%= cl_image_tag @instrument.user.photo.key, height: 100, width: 100, crop: :fill, class: 'card-trip-user avatar-bordered'  %>
     </div>
 
     <div class="col-lg-6 show-card-details">
-
       <% if @instrument.user != current_user %>
+
       <div class="instrument-details">
         <h4>Description:</h4>
         <p><%= @instrument.description %></p>
