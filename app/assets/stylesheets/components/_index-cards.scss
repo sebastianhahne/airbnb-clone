@@ -5,6 +5,11 @@
   border-radius: 16px;
   margin: 20px;
   padding: 0px;
+
+  &:hover {
+  transform: scale(1.03);
+  transition-duration: 300ms;
+  }
 }
 
 .instrument-image {
