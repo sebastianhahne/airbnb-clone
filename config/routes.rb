@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   resources :instruments do
     resources :bookings, only: [:create, :show, :index]
   end
-  resources :bookings, only: [:destroy]
-  patch '/bookings/:id', to: 'bookings#update', as: :update_booking
+  resources :bookings, only: [:destroy, :update]
 end
 
 
