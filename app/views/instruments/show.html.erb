@@ -12,11 +12,11 @@
 
     <div class="col-lg-6 show-card-details">
 
+      <% if @instrument.user != current_user %>
       <div class="instrument-details">
         <h4>Description:</h4>
         <p><%= @instrument.description %></p>
       </div>
-
 
       <div class="container">
 
@@ -30,6 +30,12 @@
         <br>
         <h4>Total beers: <span id="total_price"></span></h4>
         <%= f.submit "Book Now", class: "btn-solid"%>
+        <% end%>
+        <% else %>
+        <div class="instrument-details">
+          <h4>Description:</h4>
+          <p><%= @instrument.description %></p>
+        </div>
         <% end%>
         <br>
           <%= link_to "Back to search results", instruments_path %>
