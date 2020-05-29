@@ -17,7 +17,7 @@
                 <% end %>
                 <div class="card-product-infos row d-flex justify-content-between">
                   <div class="col-md-auto">
-                    <h2><%= booking.instrument.name.titleize %></h2>
+                    <h5><%= booking.instrument.name.titleize %></h5>
                     <div class="cancel-booking col-md-auto">
                         <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete"}, class: "btn btn-solid" %>
                     </div>
