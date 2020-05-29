@@ -41,9 +41,8 @@
                   <%= link_to (cl_image_tag '/app/assets/images/guitar_dummy.jpg', height: 320, width: 320, crop: :fill, class: 'instrument-image'), instrument_path(booking.instrument) %>
                 <% end %>
                 <div class="card-product-infos row d-flex justify-content-between">
-                  <div class="col-md-auto">              
+                  <div class="col-md-auto">
                     <h2><%= booking.instrument.name.titleize %></h2>
-                    <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete"} %>
                   </div>
                   <div class="col-md-auto right-part">
                     <p><strong>From:</strong><%= booking.start_date %></p>
