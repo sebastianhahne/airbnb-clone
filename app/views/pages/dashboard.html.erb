@@ -98,7 +98,7 @@
                   <div class="card-product-infos row d-flex justify-content-between">
                     <div class="col-md-auto">
                       <% if booking.status == "Pending validation" %>
-                        <h2><%= booking.user.username.titleize %> wants to rent your <%= booking.instrument.name %></h2>
+                        <h5><%= booking.user.username.titleize %> wants to rent your <%= booking.instrument.name %></h5>
                         <div class="accept-buttons row d-flex justify-content-between">
                           <div class="accept col-md-auto">
                             <%= link_to "Accept ", booking_path(id: booking.id, booking: {status: "Confirmed"}), method: :patch, class: "btn btn-solid" %>
