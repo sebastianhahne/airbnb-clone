@@ -28,8 +28,8 @@ class BookingsController < ApplicationController
 
   def update
     set_booking
-    @booking.status = "Pending validation"
-    @booking.save!
+    @booking.update(booking_params)
+    redirect_to dashboard_path
   end
 
   def destroy

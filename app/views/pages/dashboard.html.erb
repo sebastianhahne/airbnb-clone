@@ -19,9 +19,7 @@
                   <div class="col-md-auto">
                     <h2><%= booking.instrument.name %></h2>
                     <div class="cancel-booking col-md-auto">
-                      <label class="btn btn-solid">Cancel Booking<span style="display:none;">
-                        <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete"} %>
-                      </span></label>
+                        <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete"}, class: "btn btn-solid" %>
                     </div>
                   </div>
                   <div class="col-md-auto right-part">
@@ -45,7 +43,7 @@
                 <div class="card-product-infos row d-flex justify-content-between">
                   <div class="col-md-auto">
                     <h2><%= booking.instrument.name %></h2>
-                    <%= link_to "Cancel Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete"} %>
+
                   </div>
                   <div class="col-md-auto right-part">
                     <p><strong>From:</strong><%= booking.start_date %></p>
@@ -73,7 +71,7 @@
                     <p><strong>From:</strong><%= booking.start_date %></p>
                     <p><strong>To:</strong><%= booking.end_date %></p>
                     <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
-                    <p><%= booking.instrument.user.username %> canceled your booking</p>
+                    <p><strong><%= booking.instrument.user.username %> canceled your booking !</strong></p>
                   </div>
                 </div>
               </div>
@@ -89,7 +87,6 @@
       <ul class="list-unstyled">
         <% @instruments.each do |instrument| %>
           <% instrument.bookings.each do |booking| %>
-            <% if booking.status == "Pending validation" %>
               <li class="dashboard">
                 <div class='product-body card-product'>
                   <% if booking.instrument.photo.attached? %>
@@ -101,21 +98,33 @@
                   <% end %>
                   <div class="card-product-infos row d-flex justify-content-between">
                     <div class="col-md-auto">
-                      <h2><%= booking.user.username %> wants to rent your <%= booking.instrument.name %></h2>
+                      <% if booking.status == "Pending validation" %>
+                        <h2><%= booking.user.username %> wants to rent your <%= booking.instrument.name %></h2>
                         <div class="accept-buttons row d-flex justify-content-between">
                           <div class="accept col-md-auto">
-                            <label class="btn btn-solid">Accept
-                            <span style="display:none;">
-                              <%= link_to "Accept ", booking_path(booking, booking: {status: "Confirmed"}), method: :patch%>
-                            </span></label>
+                            <%= link_to "Accept ", booking_path(id: booking.id, booking: {status: "Confirmed"}), method: :patch, class: "btn btn-solid" %>
                           </div>
                           <div class="decline col-md-auto">
-                            <label class="btn btn-ghost">Decline
-                            <span style="display:none;">
-                              <%= link_to "Decline", booking_path(booking, booking: {status: "Canceled"}), method: :patch%>
-                            </span></label>
+                            <%= link_to "Decline", booking_path(id: booking.id, booking: {status: "Canceled"}), method: :patch, class: "btn btn-ghost" %>
                           </div>
                         </div>
+                      <% elsif booking.status == "Confirmed" %>
+                        <h2>✔ Confirmed <%= booking.user.username %> to rent your instrument</h2>
+                        <div class="accept-buttons row d-flex justify-content-between">
+                          <div class="accept col-md-auto">
+                          </div>
+                          <div class="decline col-md-auto">
+                          </div>
+                        </div>
+                      <% elsif booking.status == "Canceled" %>
+                        <h2>❌ You canceled booking of <%= booking.user.username %></h2>
+                        <div class="accept-buttons row d-flex justify-content-between">
+                          <div class="accept col-md-auto">
+                          </div>
+                          <div class="decline col-md-auto">
+                          </div>
+                        </div>
+                      <% end %>
                     </div>
                     <div class="col-md-auto right-part">
                       <p><strong>From:</strong><%= booking.start_date %></p>
@@ -125,20 +134,11 @@
                   </div>
                 </div>
               </li>
-            <% elsif booking.status == "Confirmed" %>
-              <p>✔ Confirmed <%= booking.user.username %> to rent your instrument</p>
-              <p><strong>From:</strong><%= booking.start_date %></p>
-              <p><strong>To:</strong><%= booking.end_date %></p>
-              <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
-            <% elsif booking.status == "Canceled" %>
-              <p>❌ You canceled booking of <%= booking.user.username %></p>
-              <p><strong>From:</strong><%= booking.start_date %></p>
-              <p><strong>To:</strong><%= booking.end_date %></p>
-              <p><strong>Total price: </strong><%= (booking.end_date-booking.start_date).to_i*5 %> 🍺</p>
-            <% end %>
           <% end %>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
