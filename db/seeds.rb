@@ -24,8 +24,8 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
-    file = URI.open('app/assets/images/instruments/instruments/ukulele_dummy.jpg')
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
+    file = URI.open('app/assets/images/instruments/ukulele_dummy.jpg')
     new_instrument.photo.attach(io: file, filename: 'ukulele_dummy.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
 
@@ -34,8 +34,8 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
-    file = URI.open('app/assets/images/instruments/instruments/flute.jpg')
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
+    file = URI.open('app/assets/images/instruments/flute.jpg')
     new_instrument.photo.attach(io: file, filename: 'flute.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
 
@@ -55,8 +55,8 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
-    file = URI.open('app/assets/images/instruments/instruments/acoustic_guitar.jpg')
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
+    file = URI.open('app/assets/images/instruments/acoustic_guitar.jpg')
     new_instrument.photo.attach(io: file, filename: 'acoustic_guitar.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
 
@@ -65,7 +65,7 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/accordion.jpg')
     new_instrument.photo.attach(io: file, filename: 'accordion.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -85,7 +85,7 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/trumpet.jpg')
     new_instrument.photo.attach(io: file, filename: 'trumpet.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -95,7 +95,7 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/xylo_baby.jpg')
     new_instrument.photo.attach(io: file, filename: 'xylo_baby.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -115,7 +115,7 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/accordion2.jpg')
     new_instrument.photo.attach(io: file, filename: 'accordion2.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -125,7 +125,7 @@ puts 'Cloning users'
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/harmonica.jpg')
     new_instrument.photo.attach(io: file, filename: 'harmonica.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -146,7 +146,7 @@ puts "User #{username} created"
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/drumkit_sunset.jpg')
     new_instrument.photo.attach(io: file, filename: 'drumkit_sunset.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -156,7 +156,7 @@ puts "User #{username} created"
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/fender_guitar.jpg')
     new_instrument.photo.attach(io: file, filename: 'fender_guitar.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
@@ -166,7 +166,7 @@ puts "User #{username} created"
     description = "This is my #{name}. There are many like it, but this one is mine. My #{name} is my best friend. It is my life. I must master it as I must master my life.
     Without me, my #{name} is useless. Without my #{name}, I am useless."
 
-    new_instrument = Instrument.create!(name: name, category: category, description: description, user: user)
+    new_instrument = Instrument.create!(name: name, category: category, description: description, user: new_user)
     file = URI.open('app/assets/images/instruments/piano.jpg')
     new_instrument.photo.attach(io: file, filename: 'piano.jpg', content_type: 'image/jpg')
     puts "Instrument #{name} created"
